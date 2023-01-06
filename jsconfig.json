@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@lib/*": ["lib/*"],
+      "@constants/*": ["constants/*"],
+      "@layout/*": ["layout/*"],
+      "@assets/*": ["assets/*"],
+      "@hooks/*": ["hooks/*"],
+      "@styles/*": ["styles/*"],
+      "@upload/*": ["modules/upload/*"],
+      "@settings/*": ["modules/settings/*"],
+      "@dashboard/*": ["modules/dashboard/*"]
+    }
+  },
+  "exclude": ["build", "config", "node_modules", "public", "scripts"],
+  "include": ["./src/**/*"]
+}
