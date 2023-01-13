@@ -1,7 +1,7 @@
 import { useState, memo } from 'react'
 import { VStack, Center, Heading, Text } from '@chakra-ui/react'
 
-import convertSizeNumberToBytes from '../../utils/convertSizeNumberToBytes'
+import convertSizeNumberToBytes from '@upload/utils/convertSizeNumberToBytes'
 import { AiOutlineCloudUpload } from 'react-icons/ai'
 import { useDropzone } from './context/Provider'
 

@@ -38,7 +38,7 @@ export default function SidebarWithHeader({ children }) {
       <MobileNav onOpen={onOpen} />
       <Box
         ml={{ base: 0, md: 60 }}
-        p="4"
+        p={4}
         h="calc((100vh) - 96px)"
         overflowY="auto"
       >

@@ -8,11 +8,13 @@ import {
 } from '@chakra-ui/react'
 
 import convertSizeNumberToBytes from '@upload/utils/convertSizeNumberToBytes'
-
 import { AiOutlineClose, AiOutlineFile } from 'react-icons/ai'
+import { usePageManager } from '@upload/contexts/PageManager/Provider'
 
 export default function FileContainer({ file }) {
+  const { removeFileFromStacked } = usePageManager()
   const { name, size } = file
+
   return (
     <ScaleFade initialScale={0.9} in={true}>
       <Stack
@@ -24,7 +26,11 @@ export default function FileContainer({ file }) {
         borderRadius="md"
         p={2}
         justifyContent="space-between"
-        borderColor={useColorModeValue('gray.500', 'whiteAlpha.500')}
+        transition="all 0.3s ease-in-out"
+        borderColor={useColorModeValue('gray.200', 'whiteAlpha.200')}
+        _hover={{
+          borderColor: useColorModeValue('gray.400', 'whiteAlpha.400')
+        }}
       >
         <Flex alignItems="center">
           <Flex
@@ -39,7 +45,7 @@ export default function FileContainer({ file }) {
           </Flex>
 
           <Flex direction="column" maxW="230px" textOverflow="ellipsis">
-            <Text fontWeight={600}>{name}</Text>
+            <Text fontWeight={500}>{name}</Text>
             <Text variant="secondary">{convertSizeNumberToBytes(size)}</Text>
           </Flex>
         </Flex>
@@ -51,7 +57,7 @@ export default function FileContainer({ file }) {
             borderRadius="full"
             w="24px"
             h="24px"
-            onClick={() => console.log('Close')}
+            onClick={() => removeFileFromStacked(file)}
             cursor="pointer"
             _hover={{ bg: useColorModeValue('gray.200', 'whiteAlpha.200') }}
             transition="all 0.3s ease-in-out"

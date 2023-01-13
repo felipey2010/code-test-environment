@@ -2,7 +2,7 @@ import { useRef, useContext } from 'react'
 import { Input } from '@chakra-ui/react'
 
 import DropzoneContext from './Context'
-import formatFile from '../../../utils/formatFile'
+import formatFile from '@upload/utils/formatFile'
 import { useToast } from '@chakra-ui/react'
 
 function DropzoneProvider({

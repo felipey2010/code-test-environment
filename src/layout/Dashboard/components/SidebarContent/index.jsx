@@ -36,21 +36,42 @@ const SidebarContent = ({ onClose, ...rest }) => {
     >
       <Flex
         h="20"
+        w="full"
         alignItems="center"
         // mx="8"
         justifyContent="center"
         borderBottomWidth="1px"
         borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
       >
-        <CustomLink href="/">
-          <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
+        <CustomLink
+          href="/"
+          w={{ base: 'calc(100% - 50px)', md: 'full' }}
+          textAlign="center"
+        >
+          <Text
+            w={{ base: 'full', md: 'full' }}
+            fontSize="2xl"
+            fontFamily="monospace"
+            fontWeight="bold"
+          >
             Dev_Env
           </Text>
         </CustomLink>
-        <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
+        <CloseButton
+          size="lg"
+          mr={1}
+          display={{ base: 'flex', md: 'none' }}
+          onClick={onClose}
+        />
       </Flex>
+
       {LinkItems.map((item) => (
-        <NavItem key={item.name} icon={item.icon} link={item.link}>
+        <NavItem
+          key={item.name}
+          icon={item.icon}
+          link={item.link}
+          onClick={onClose}
+        >
           {item.name}
         </NavItem>
       ))}

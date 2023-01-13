@@ -74,7 +74,11 @@ const MobileNav = ({ onOpen, ...rest }) => {
               <HStack>
                 <Avatar
                   size={'sm'}
+                  bg="primary"
+                  name="Felipey Dev"
+                  border="2px solid #052742"
                   src={'https://randomuser.me/api/portraits/men/28.jpg'}
+                  // src={'https://avatars.githubusercontent.com/u/24297997?v=4'}
                 />
                 <VStack
                   display={{ base: 'none', md: 'flex' }}
